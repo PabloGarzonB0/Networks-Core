@@ -7,8 +7,11 @@ Hola a todos los que visitan este repositorio dedicado al aprendizaje activo y d
 Este repositorio tiene como propósito servir como guía de referencia y práctica para el desarrollo de habilidades en networking, abarcando desde conceptos básicos hasta configuraciones avanzadas en entornos reales y virtuales.
 
 <div align="center">
-    <img src="Ilustration_1.png" alt="Dispatch processing in Switches, routers and hosts" width="600"/>
+    <img src="Ilustration_1.png" alt="Dispatch processing in Switches, routers and hosts" width="700"/>
     <p><em>Fuente: <a href ="https://networking.harshkapadia.me/files/books/computer-networking-a-top-down-approach-8th-edition.pdf">Computer networking a top down approch</a></em></p>
+</div>
+<div align="center">
+    <img src="LAN_Configuration.png" alt="LAN - Intranet" width="700"/>
 </div>
 
 ## Contenido del Repositorio
