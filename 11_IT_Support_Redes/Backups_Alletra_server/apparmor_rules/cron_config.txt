@@ -1,0 +1,13 @@
+# Cron configuration snippets used
+
+# Aplicar inmutabilidad cada minuto
+* * * * * /opt/veeam-security/scripts/apply_immutability.sh
+
+# Abrir ventana de backup a las 14:00
+0 14 * * * /opt/veeam-security/scripts/backup_window_manager.sh open
+
+# Cerrar ventana de backup a las 15:00
+0 15 * * * /opt/veeam-security/scripts/backup_window_manager.sh close
+
+# Monitoreo de seguridad cada hora
+0 * * * * /opt/veeam-security/scripts/security_monitor.sh >/dev/null 2>&1

@@ -1,0 +1,46 @@
+# ============================================================================
+# CONFIGURACIÓN FAIL2BAN - VEEAM SECURITY
+# ============================================================================
+[DEFAULT]
+# Tiempo de baneo (1 hora)
+bantime = 3600
+
+# Ventana de tiempo para contar intentos (10 minutos)
+findtime = 600
+
+# Número máximo de intentos antes de banear
+maxretry = 3
+
+# Acción al detectar ataque
+banaction = iptables-multiport
+action = %(action_mwl)s
+
+# ============================================================================
+# PROTECCIÓN SSH
+# ============================================================================
+[sshd]
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+bantime = 3600
+findtime = 600
+
+# ============================================================================
+# PROTECCIÓN CONTRA ATAQUES DDOS SSH
+# ============================================================================
+[sshd-ddos]
+enabled = true
+port = ssh
+filter = sshd-ddos
+logpath = /var/log/auth.log
+maxretry = 2
+bantime = 7200
+findtime = 300
+# ============================================================================
+# LOGS
+# ============================================================================
+[DEFAULT]
+logtarget = /var/log/fail2ban.log
+loglevel = INFO

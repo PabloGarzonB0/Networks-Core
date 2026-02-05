@@ -1,0 +1,17 @@
+#include <tunables/global>
+
+/usr/bin/rm {
+  #include <abstractions/base>
+
+  /usr/bin/rm mr,
+  /bin/rm mr,
+
+  # Permitir operaciones normales
+  /** rw,
+
+  # BLOQUEAR acceso al repositorio Veeam
+  deny /mnt/veeamrepo/** rwklx,
+
+  # Permitir logs
+  /var/log/** w,
+}

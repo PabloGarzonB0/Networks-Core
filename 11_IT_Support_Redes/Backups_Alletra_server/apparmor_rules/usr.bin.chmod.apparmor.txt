@@ -1,0 +1,14 @@
+#include <tunables/global>
+
+/usr/bin/chmod {
+  #include <abstractions/base>
+
+  /usr/bin/chmod mr,
+  /bin/chmod mr,
+
+  /** rw,
+
+  deny /mnt/veeamrepo/** rwklx,
+
+  /var/log/** w,
+}

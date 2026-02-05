@@ -1,0 +1,17 @@
+#include <tunables/global>
+
+/usr/bin/chattr {
+  #include <abstractions/base>
+
+  /usr/bin/chattr mr,
+  /bin/chattr mr,
+
+  # Permitir operaciones normales
+  /** rw,
+
+  # BLOQUEAR acceso al repositorio Veeam
+  deny /mnt/veeamrepo/** rwklx,
+
+  # Permitir logs
+  /var/log/** w,
+}

@@ -1,0 +1,14 @@
+#include <tunables/global>
+
+/usr/bin/chown {
+  #include <abstractions/base>
+
+  /usr/bin/chown mr,
+  /bin/chown mr,
+
+  /** rw,
+
+  deny /mnt/veeamrepo/** rwklx,
+
+  /var/log/** w,
+}

@@ -1,0 +1,33 @@
+# ============================================================================
+# REGLAS DE AUDITORÍA - VEEAM SECURITY
+# ============================================================================
+
+# Monitorear intentos de uso de chattr
+-w /usr/bin/chattr -p x -k veeam_chattr_attempt
+
+# Monitorear intentos de eliminación
+-w /usr/bin/rm -p x -k veeam_delete_attempt
+
+# Monitorear cambios de permisos
+-w /usr/bin/chmod -p x -k veeam_chmod_attempt
+-w /usr/bin/chown -p x -k veeam_chown_attempt
+
+# Monitorear acceso al repositorio
+-w /mnt/veeamrepo -p wa -k veeam_repo_access
+
+# Monitorear cambios en configuración de AppArmor
+-w /etc/apparmor.d/ -p wa -k apparmor_config_change
+
+# Monitorear cambios en reglas de auditoría
+-w /etc/audit/ -p wa -k audit_config_change
+
+# Monitorear cambios en cron
+-w /etc/crontab -p wa -k cron_change
+-w /etc/cron.d/ -p wa -k cron_change
+
+# Monitorear cambios en sudoers
+-w /etc/sudoers -p wa -k sudoers_change
+-w /etc/sudoers.d/ -p wa -k sudoers_change
+
+# Monitorear intentos de desactivar servicios
+-w /bin/systemctl -p x -k systemctl_execution
